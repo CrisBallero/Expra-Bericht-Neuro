@@ -277,16 +277,26 @@ Schlaf unmittelbar nach einer Psychotherapie könnte die Integration von neuen/f
 
 \clearpage
 \appendix
-\numberwithin{figure}{section} %Nummerierung beginnt im App. bei 1
+\numberwithin{figure}{section} %Nummerierung beginnt im App. bei 1 und läuft nicht weiter beim main.tex
 \numberwithin{table}{section} %s.o.
 \renewcommand*{\thesection}{\Alph{section}}
 %\renewcommand*{\appendixname}{}
-\section{Triplet-Tabelle}
-\label{whatever}
-\input{AppA}
+
+\section{Instruktion TestleiterInnen}
+\input{AppC.tex}
+\newpage
+
+\section{Instruktion ProbandInnen}
+\input{AppD.tex}
+\newpage
+
 \section{Stimulus-Set}
-\label{whateverb}
 \input{AppB}
+\newpage
+
+\section{Triplet-Tabelle}
+\input{AppA}
+\newpage
 \clearpage
 %\phantomsection
 
