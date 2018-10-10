@@ -1,5 +1,4 @@
 \input{alterheader}
-
 \begin{document}
 
 %\maketitle
@@ -47,7 +46,9 @@ Science \sep Publication \sep Complicated
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
+\newpage
 
+\pagestyle{mainmatter}
 \section{Einleitung}
 \label{S:1}
 
@@ -275,9 +276,18 @@ Schlaf unmittelbar nach einer Psychotherapie könnte die Integration von neuen/f
 \bibliography{ref}
 
 \clearpage
-
-%\appendix
-
-\input{App}
+\appendix
+\numberwithin{figure}{section} %Nummerierung beginnt im App. bei 1
+\numberwithin{table}{section} %s.o.
+\renewcommand*{\thesection}{\Alph{section}}
+%\renewcommand*{\appendixname}{}
+\section{Triplet-Tabelle}
+\label{whatever}
+\input{AppA}
+\section{Stimulus-Set}
+\label{whateverb}
+\input{AppB}
+\clearpage
+%\phantomsection
 
 \end{document}

@@ -1,22 +1,37 @@
-\documentclass[longtitle,12pt]{elsarticle}
+\documentclass[nopreprintline,12pt]{elsarticle}
+%\setcounter{secnumdepth}{1} %auf 0, wenn Sections nicht nummeriert werden sollen
 
 \usepackage{fancyhdr}
-\fancyhf{}
+
 
 \pagestyle{fancy}
+\fancyhf{}
+%\renewcommand{\sectionmark}[1]{ \markright{#1} }
 \thispagestyle{empty}
-\fancyhead[R]{\leftmark}
+\fancyhead[R]{\rightmark}
+\fancyhead[L]{}
 \fancyfoot[C]{\thepage}
 
 \usepackage{todonotes} %für Markierungen
 %\usepackage[disable]{todonotes} um alle gleichzeitig wegzukriegen
 
-
-\fancypagestyle{plain}   % für seiten mit chapter titel
+\fancypagestyle{frontmatter}   % für seiten mit chapter titel
 {
   \fancyhf{}
-  \lhead{}
-  \rhead{\leftmark}
+  \fancyhead[R]{\rightmark}
+  %\fancyhead[L]{\leftmark}
+  %\lhead{}
+  %\rhead{\leftmark}
+  \fancyfoot[C]{\thepage}
+}
+
+\fancypagestyle{mainmatter}   % für seiten mit chapter titel
+{
+  \fancyhf{}
+  \fancyhead[R]{\rightmark}
+  %\fancyhead[L]{\leftmark}
+  %\lhead{}
+  %\rhead{\leftmark}
   \fancyfoot[C]{\thepage}
 }
 
@@ -44,6 +59,8 @@
 
 \usepackage[onehalfspacing]{setspace} %Zeilenabstand
 
+\usepackage[toc,page]{appendix}
+
 %\makeatletter
 %\def\ps@pprintTitle{%
 %   \let\@oddhead\@empty
@@ -61,8 +78,8 @@
 \usepackage{apalike}
 \bibliographystyle{apalike}
 %%%%%%%%%%%%%%%%%%%%%%%
-
 \author{Cristina Ballero Reque}
 \title{Einfluss von Schlaf auf die Gedächtnisleistung}
 \address{Ruhr-Universität Bochum}
-\address{Abteilung Neuropsychologie}
+\address{Arbeitseinheit Neuropsychologie}
+\journal{Dr. Lorena Deuker}
