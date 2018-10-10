@@ -1,0 +1,64 @@
+\documentclass[longtitle,12pt]{elsarticle}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+
+\pagestyle{fancy}
+\thispagestyle{empty}
+\fancyhead[R]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+\usepackage{todonotes} %für Markierungen
+
+\fancypagestyle{plain}   % für seiten mit chapter titel
+{
+  \fancyhf{}
+  \lhead{}
+  \rhead{\leftmark}
+  \fancyfoot[C]{\thepage}
+}
+
+\renewcommand{\headrulewidth}{0.5pt}
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{\thechapter. \ #1}{}}
+
+\usepackage{newtxtext,newtxmath}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{amssymb}
+
+\usepackage{lineno}
+
+\usepackage{xcolor} %Text in Farbe
+
+\usepackage[ngerman]{babel} %Deutsch
+\usepackage[utf8]{inputenc}
+
+\usepackage[onehalfspacing]{setspace} %Zeilenabstand
+
+%\makeatletter
+%\def\ps@pprintTitle{%
+%   \let\@oddhead\@empty
+%   \let\@evenhead\@empty
+%   \let\@oddfoot\@empty
+%   \let\@evenfoot\@oddfoot
+%}
+%\makeatother
+
+\setlength{\headheight}{15pt}
+
+
+%% `Elsevier LaTeX' style
+\usepackage{natbib}
+\usepackage{apalike}
+\bibliographystyle{apalike}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Cristina Ballero Reque}
+\title{Einfluss von Schlaf auf die Gedächtnisleistung}
+\address{Ruhr-Universität Bochum}
+\address{Abteilung Neuropsychologie}

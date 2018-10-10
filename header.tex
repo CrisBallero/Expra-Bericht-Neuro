@@ -1,0 +1,205 @@
+\documentclass[12pt]{elsarticle}
+
+\usepackage[]{comment}
+%Seitenstruktur
+\usepackage[showframe=false]{geometry}
+	\geometry{a4paper,width=150mm,top=25mm,bottom=25mm,headsep=.7cm, footskip=30pt, headheight=43pt}
+	%\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+	%\geometry{a4paper,tmargin=2.2cm,bmargin=1.5cm,lmargin=\value{vlmargin}mm,rmargin=\value{vrmargin}mm, headsep=.7cm, footskip=10pt, headheight=43pt}
+	
+\usepackage[utf8]{inputenc} %input in ISO 8859-1 (Latin1)
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usepackage{fancyhdr} % für fancy page style, inkl. footer und header
+\pagestyle{fancy} 
+%\newcounter{vlmargin}
+%\newcounter{vrmargin}
+%\setcounter{vlmargin}{18}
+%\setcounter{vrmargin}{17}
+
+\renewcommand{\footrulewidth}{.5pt}
+
+    \fancyhf{}
+    \fancyhead[RO,LE]{\itshape \leftmark}
+    \fancyfoot[C]{\thepage}
+
+\fancypagestyle{plain}{ % für seiten mit chapter titeln
+    \fancyhf{}
+    \fancyhead[RO,LE]{\itshape \leftmark}
+%    \fancyfoot[C]{\thepage}%
+     \fancyfoot[C]{\thepage}
+}
+
+%Überschriften und Kapitel
+\usepackage[pagestyles]{titlesec} % custom title und section formatierung
+\titleformat{\chapter}
+ {\normalfont\bfseries\Huge}{\thechapter.}{10pt}{}
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+
+%\titleformat{\section}[display]
+% {\bfseries\huge}
+% {\thesection. \filright #1  }
+% {-2ex} %Einstellen Abstand Chapter zu Text
+ {}
+%\titlespacing{\section}{0cm}{\dimexpr\topskip-10mm}{*6}[0pt]
+
+%Sprache und Schrift
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+
+%Bibliothek
+\usepackage[sortcites, backend=biber,
+    				style=numeric, 
+    				sorting=none, 
+    				natbib=true, 
+   					doi=false, 
+                 	eprint = false,
+   					url = true,
+                    isbn = false,
+]{biblatex}
+
+\renewbibmacro{in:}{} % no In:
+\renewcommand{\labelnamepunct}{\addcolon\space} % Doppelpunkte zwischen Author und Titel
+\DeclareFieldFormat{title}{\mkbibemph{#1\isdot}}
+\DeclareFieldFormat[article]{title}{#1} % keine Anführungszeichen bei den Titeln
+\DeclareFieldFormat[article]{pages}{#1} % keine pages
+\DeclareFieldFormat{title}{\textit{#1}} % title in italics
+\renewcommand{\bibopenparen}{\addcomma\addspace}
+\renewcommand{\bibcloseparen}{\addspace}
+
+%\bibliographystyle{abbrv}
+\addbibresource{ref.bib}
+
+\usepackage[nottoc]{tocbibind} %Includes "References" in the table of contents
+
+%\usepackage[usenames,dvipsnames]{color}
+
+%Abbildungen und Bilder
+%\usepackage{subfigure}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{capt-of}
+
+%Formeln
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{amstext}
+
+
+%Zitate und Verweise
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{hyperref} % für links im inhaltsverzeichnis und bei \ref commands
+\hypersetup{
+    colorlinks=false, % bei true wird die font farbe geändert, nicht hübsch beim drucken
+    citecolor=blue,
+    filecolor=red,
+    linkcolor=black,
+    urlcolor=cyan
+}
+\usepackage{tabularx} % tabularx mit automatischer Spaltenbreite
+\usepackage{booktabs} % tabellenverbesserungen
+\usepackage{ragged2e, eqparbox} % für text-alignment mit \flushleft \flushright \centering etc
+
+\newcolumntype{M}[1]{>{\RaggedRight}m{#1} <{\hspace*{-1pt}}}
+\renewcommand{\tabularxcolumn}[1]{>{\centering\arraybackslash}m{#1}}
+
+%\usepackage[table]{xcolor} % für tabellenzeilen hintergrundfarben
+% \definecolor{Gray}{rgb}{0.80784, 0.86667, 0.90196} %dunkelblau
+% \definecolor{Lightgray}{rgb}{0.9176, 0.95, 0.95686} %hellblau
+% \definecolor{Akzent}{rgb}{0.6627, 0.63529, 0.55294} %akzentfarbe
+%\newcommand{\whitehead}{\bfseries\color{white}}
+
+\newcommand\colourpadding[1]{\addlinespace[-1pt]\arrayrulecolor{#1}\midrule[6pt]\arrayrulecolor{black}}
+
+
+\usepackage{makecell} % für \makecell command zum besseren text formatieren in tabellenzellen
+\usepackage{multirow} % multirow
+\usepackage{rotating} % zum text rotieren
+\usepackage{listings} % zum darstellen von code, funktioniert wie \begin{verbatim}, unterstützt syntax highlighting für mehrere programmiersprachen
+\usepackage{fancyvrb} % boxen
+
+\newcolumntype{S}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{T}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{a}{>{\columncolor{Gray}}l}
+\newcolumntype{b}{>{\columncolor{white}}l}
+\newcolumntype{R}{>{\raggedright\arraybackslash}X}
+
+\setlength\arrayrulewidth{.7pt} % müssen dicker sein als normal weil sonst das coloring die linien überdeckt
+
+
+
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ % definiert sachen für das listings package
+    language     = [LaTeX]TeX,
+    delim        = [s][\color{purple}]{$}{$},
+    moredelim    = [s][\color{purple}]{\\[}{\\]},
+    moredelim    = [s][\color{purple}]{$$}{$$},
+    moredelim    = [is][\slshape\color{violet}]{@@}{@@},  
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mygreen},     % string literal style
+  morekeywords={*,rowcolors,multirow,dimexpr,makecell,newcolumntype,arraybackslash},
+}
+
+
+
+
+ %Abstände der Absätze ändern
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+\usepackage{amsmath}
+
+\usepackage{setspace} %Zeilenabstand ändern
+
+\usepackage{icomma} % Leerzeile hinter Komma in Gleichung verschwindet
+
+
+
+\usepackage[]{todonotes}
+
+%SI units
+\usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
+\usepackage{cancel}
+%\usepackage{caption}
+\usepackage{cleveref}
+\usepackage{colortbl}
+\usepackage{csquotes}
+\usepackage{helvet}
+\usepackage{mathpazo}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\DeclareSIUnit\Celcius{C}
+\DeclareSIUnit\pixel{pixel}
+
+%New commands
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%\usepackage{emptypage}
