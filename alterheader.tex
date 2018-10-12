@@ -1,4 +1,4 @@
-\documentclass[nopreprintline,12pt]{elsarticle}
+\documentclass[nopreprintline,12pt,authoryear]{elsarticle} %authoryear wird gebraucht, damit bei natbib \citep richtig funktioniert!
 %\setcounter{secnumdepth}{1} %auf 0, wenn Sections nicht nummeriert werden sollen
 
 \usepackage{fancyhdr}
@@ -75,8 +75,12 @@
 
 %% `Elsevier LaTeX' style
 \usepackage{natbib}
+%\usepackage[natbibapa]{apacite}
 \usepackage{apalike}
+%\usepackage{apacite}
 \bibliographystyle{apalike}
+\usepackage{babelbib}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 \author{Cristina Ballero Reque}
 \title{Einfluss von Schlaf auf die Gedächtnisleistung}
